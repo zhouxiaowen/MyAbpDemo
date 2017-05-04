@@ -383,6 +383,8 @@
     <Content Include="Scripts\assets\js\charts\sparkline\jquery.sparkline.js" />
     <Content Include="Scripts\assets\js\charts\sparkline\sparkline-init.js" />
     <Content Include="Scripts\assets\js\colorpicker\jquery.minicolors.js" />
+    <Content Include="Scripts\assets\js\datatable\dataTables.bootstrap.js" />
+    <Content Include="Scripts\assets\js\datatable\jquery.dataTables.js" />
     <Content Include="Scripts\assets\js\datatable\swf\copy_csv_xls_pdf.swf" />
     <Content Include="Scripts\assets\js\datatable\datatables-init.js" />
     <Content Include="Scripts\assets\js\datatable\dataTables.bootstrap.min.js" />

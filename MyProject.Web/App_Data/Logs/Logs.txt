@@ -697,3 +697,55 @@ DEBUG 2017-05-03 13:49:07,452 [1    ] Abp.Logging.LogHelper                    -
 WARN  2017-05-03 13:49:08,703 [10   ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
 WARN  2017-05-03 13:49:08,722 [10   ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
 WARN  2017-05-03 17:48:34,053 [465  ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+DEBUG 2017-05-04 00:33:11,859 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-05-04 00:33:11,872 [1    ] Abp.Modules.AbpModuleManager             - Found 11 ABP modules in total.
+DEBUG 2017-05-04 00:33:11,876 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.Web.MyProjectWebModule, MyProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,878 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,878 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,878 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,878 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,879 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.MyProjectDataModule, MyProject.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,879 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,879 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.MyProjectCoreModule, MyProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,879 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.MyProjectApplicationModule, MyProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,879 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.MyProjectWebApiModule, MyProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,879 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:11,882 [1    ] Abp.Modules.AbpModuleManager             - 11 modules loaded.
+DEBUG 2017-05-04 00:33:12,179 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: MyProject.EntityFramework.MyProjectDbContext, MyProject.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 00:33:12,930 [1    ] Abp.Localization.LocalizationManager     - Initializing 3 localization sources.
+DEBUG 2017-05-04 00:33:12,936 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-05-04 00:33:12,937 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-05-04 00:33:12,938 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: MyProject
+DEBUG 2017-05-04 00:33:13,096 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-05-04 00:33:13,122 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'MyProject.PersonApp.IPersonAppService' with service name 'app/person'.
+WARN  2017-05-04 00:33:16,343 [6    ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+WARN  2017-05-04 00:33:16,359 [6    ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+WARN  2017-05-04 09:33:22,589 [17   ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+WARN  2017-05-04 09:33:22,589 [17   ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+DEBUG 2017-05-04 10:39:47,540 [136  ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2017-05-04 10:39:47,544 [136  ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-05-04 10:39:47,544 [136  ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-05-04 10:39:47,545 [136  ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2017-05-04 10:41:11,787 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-05-04 10:41:11,986 [1    ] Abp.Modules.AbpModuleManager             - Found 11 ABP modules in total.
+DEBUG 2017-05-04 10:41:11,989 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.Web.MyProjectWebModule, MyProject.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,991 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,991 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,991 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,991 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,992 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.MyProjectDataModule, MyProject.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,992 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,992 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.MyProjectCoreModule, MyProject.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,992 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.MyProjectApplicationModule, MyProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,993 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyProject.MyProjectWebApiModule, MyProject.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,993 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:11,996 [1    ] Abp.Modules.AbpModuleManager             - 11 modules loaded.
+DEBUG 2017-05-04 10:41:12,690 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: MyProject.EntityFramework.MyProjectDbContext, MyProject.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-05-04 10:41:12,913 [1    ] Abp.Localization.LocalizationManager     - Initializing 3 localization sources.
+DEBUG 2017-05-04 10:41:12,919 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-05-04 10:41:12,922 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-05-04 10:41:12,923 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: MyProject
+DEBUG 2017-05-04 10:41:13,070 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-05-04 10:41:13,100 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'MyProject.PersonApp.IPersonAppService' with service name 'app/person'.
+WARN  2017-05-04 10:41:15,666 [138  ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+WARN  2017-05-04 10:41:15,713 [138  ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.

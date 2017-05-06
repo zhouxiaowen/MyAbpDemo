@@ -13,6 +13,8 @@ namespace MyProject.EntityFramework
         public virtual IDbSet<Test> Test { set; get; }
         public virtual IDbSet<Person> Person { set; get; }
 
+        public virtual IDbSet<BLogRecord> BLogRecord { set; get; }
+
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not

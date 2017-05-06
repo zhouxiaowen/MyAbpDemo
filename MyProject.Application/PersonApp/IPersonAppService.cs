@@ -8,9 +8,11 @@ using System.Web.Http;
 
 namespace MyProject.PersonApp
 {
+
     public interface IPersonAppService : IApplicationService
     {
         [HttpGet]
+        //[WebApiLogTrackerAttribute]
         List<Person> GetPersonList();
     }
 }

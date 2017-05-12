@@ -10,7 +10,7 @@ namespace MyProject
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
     public class WebApiLogTrackerAttribute : ActionFilterAttribute
     {
-        //private readonly string Key = "_thisWebApiOnActionMonitorLog_";
+        private readonly string Key = "_thisWebApiOnActionLog_";
 
         /// <summary>
         /// 调用时触发
@@ -18,6 +18,15 @@ namespace MyProject
         /// <param name="actionContext"></param>
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
+            base.OnActionExecuting(actionContext);
+
+            WebApiProp prop = new WebApiProp();
+            prop.ExecuteStartTime = DateTime.Now;
+            prop.ActionParams = actionContext.ActionArguments;
+            prop.HttpMethod = actionContext.Request.Method.Method;
+            prop.HttpRequestHeaders = actionContext.Request.Headers.ToString();
+
+            actionContext.Request.Properties[Key] = prop;
 
         }
         /// <summary>
@@ -26,7 +35,7 @@ namespace MyProject
         /// <param name="actionExecutedContext"></param>
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
         {
-            //WebApiProp wenApiProp = actionExecutedContext.Request.Properties[Key] as WebApiProp;
+            WebApiProp wenApiProp = actionExecutedContext.Request.Properties[Key] as WebApiProp;
 
             var ActionName = actionExecutedContext.ActionContext.ActionDescriptor.ActionName;
             var ControllerName = actionExecutedContext.ActionContext.ActionDescriptor.ControllerDescriptor.ControllerName;
@@ -36,13 +45,23 @@ namespace MyProject
                 {
                     ActionName = ActionName,
                     ControllerName = ControllerName + "Controller",
-                    //STime = MonLog.ExecuteStartTime,\
+                    STime = wenApiProp.ExecuteStartTime,
                     ETime = DateTime.Now,
-                    //CreateDate = DateTime.Now,
-                    //ActionPara = MonLog.GetCollections(MonLog.ActionParams),
-                    //TimeSpan = decimal.Parse((MonLog.ExecuteEndTime - MonLog.ExecuteStartTime).TotalSeconds.ToString()),
-                    //IP = MonLog.GetIP()
+                    CreateDate = DateTime.Now,
+                    ActionPara = wenApiProp.GetCollections(wenApiProp.ActionParams),
+                    TimeSpan = decimal.Parse((wenApiProp.ExecuteEndTime - wenApiProp.ExecuteStartTime).TotalSeconds.ToString()),
+                    IP = wenApiProp.GetIP()
                 };
+
+                if (actionExecutedContext.Exception != null)
+                {
+                    log.Category = "错误";
+                    log.Contents = actionExecutedContext.Exception.Message;
+                }
+                else {
+                    log.Category = "正常";
+
+                }
             }
         }
     }

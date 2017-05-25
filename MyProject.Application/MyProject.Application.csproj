@@ -117,6 +117,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Filter\WebApiLogTrackerAttribute.cs" />
+    <Compile Include="Log\Dto\LogRecordsViewModel.cs" />
+    <Compile Include="Log\ILogAppService.cs" />
+    <Compile Include="Log\LogAppService.cs" />
     <Compile Include="MyProjectApplicationModule.cs" />
     <Compile Include="MyProjectAppServiceBase.cs" />
     <Compile Include="PersonApp\IPersonAppService.cs" />

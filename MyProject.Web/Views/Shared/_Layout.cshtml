@@ -51,7 +51,11 @@
     <script src="~/Scripts/others/spinjs/jquery.spin.js"></script>
     <script src="~/Scripts/sweetalert/sweet-alert.min.js"></script>
 
+    <script src="~/Content/Site.js"></script>
+
     <script src="~/Scripts/bootstrap.min.js"></script>
+
+    
 
     <script src="~/Abp/Framework/scripts/abp.js"></script>
     <script src="~/Abp/Framework/scripts/libs/abp.jquery.js"></script>
@@ -80,6 +84,8 @@
     <link href="~/Scripts/assets/css/typicons.min.css" rel="stylesheet" />
     <link href="~/Scripts/assets/css/animate.min.css" rel="stylesheet" />
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+
 
     @*公有CSS，提供给全局使用*@
     <link href="~/Content/base.css" rel="stylesheet" />
@@ -465,6 +471,43 @@
                             </li>
                         </ul>
                     </li>
+                    <!--日志管理-->
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-table"></i>
+                            <span class="menu-text"> 日志管理 </span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="/Log/LogDB">
+                                    <i class="fa fa-users" style="width:16px;"></i>&nbsp;&nbsp;<span class="menu-text">数据库日志</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/System/Role">
+                                    <i class="fa fa-user" style="width:16px;"></i>&nbsp;&nbsp;<span class="menu-text">角色管理</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/System/Menus">
+                                    <i class="fa fa-tags" style="width:16px;"></i>&nbsp;&nbsp;<span class="menu-text">菜单管理</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/System/Module">
+                                    <i class="fa fa-cogs" style="width:16px;"></i>&nbsp;&nbsp;<span class="menu-text">模块管理</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tables-data.html">
+                                    <i class="fa fa-cubes" style="width:16px;"></i>&nbsp;&nbsp;<span class="menu-text">权限管理</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-table"></i>
@@ -617,8 +660,8 @@
 </html>
 
 <!--Basic Scripts-->
-<script src="~/Scripts/assets/js/jquery-2.0.3.min.js"></script>
-<script src="~/Scripts/assets/js/bootstrap.min.js"></script>
+@*<script src="~/Scripts/assets/js/jquery-2.0.3.min.js"></script>
+<script src="~/Scripts/assets/js/bootstrap.min.js"></script>*@
 
 <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
 <script src="~/Scripts/assets/js/skins.min.js"></script>

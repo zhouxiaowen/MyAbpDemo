@@ -250,6 +250,7 @@
     <Content Include="Content\base.css" />
     <Content Include="Content\flags\famfamfam-flags.css" />
     <Content Include="Content\flags\famfamfam-flags.png" />
+    <Content Include="Content\Site.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1222,6 +1223,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\MyProjectControllerBase.cs" />
     <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1246,6 +1248,7 @@
     <Content Include="Views\System\Menus.cshtml" />
     <Content Include="Views\System\Module.cshtml" />
     <Content Include="Views\Demo\DataTable_1.cshtml" />
+    <Content Include="Views\Log\LogDB.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

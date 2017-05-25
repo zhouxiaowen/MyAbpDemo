@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyProject.Log;
+using MyProject.PersonApp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +13,24 @@ namespace MyProject
     public class WebApiLogTrackerAttribute : ActionFilterAttribute
     {
         private readonly string Key = "_thisWebApiOnActionLog_";
+        private static ILogAppService _iLogAppService;
+
+        public ILogAppService GetLogAppService()
+        {
+            if (_iLogAppService == null)
+            {
+                _iLogAppService = Abp.Dependency.IocManager.Instance.Resolve<ILogAppService>();
+                return _iLogAppService;
+            }
+            else {
+                return _iLogAppService;
+            }
+        }
+
+
+        public WebApiLogTrackerAttribute() {
+            
+        }
 
         /// <summary>
         /// 调用时触发
@@ -60,9 +80,11 @@ namespace MyProject
                 }
                 else {
                     log.Category = "正常";
-
                 }
+                _iLogAppService = GetLogAppService();  //iLogAppService;
+                _iLogAppService.AddLogRecord(log);
             }
+           
         }
     }
 

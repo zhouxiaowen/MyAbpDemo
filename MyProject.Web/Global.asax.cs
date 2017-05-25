@@ -3,6 +3,7 @@ using Abp.Castle.Logging.Log4Net;
 using Abp.Web;
 using Castle.Facilities.Logging;
 using System.Web.Http;
+using MyProject.Log;
 
 namespace MyProject.Web
 {

@@ -1,0 +1,195 @@
+﻿
+@{
+    ViewBag.Title = "Module";
+
+}
+
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div class="widget">
+            @*全屏使用*@
+            <div class="widget-header bordered-bottom bordered-sky">
+                <span class="widget-caption"><i class="fa fa-cogs"></i>&nbsp;菜单模块</span>
+                <div class="widget-buttons">
+                    <a href="#" id="fullscreen-toggler" class="fullscreen">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                    <a href="#" data-toggle="maximize">
+                        <i class="fa fa-expand"></i>
+                    </a>
+                    <a class="sidebar-toggler" href="#">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="widget-body no-padding">
+                <div class="container-fluid">
+                    <div class="row" style="padding:10px 0px;">
+                        <div class="col-md-12">
+                            <a class="btn btn-blue" href="javascript:void(0);"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                            <a class="btn btn-darkorange" href="javascript:void(0);"><i class="fa fa-delicious"></i>&nbsp;删除</a>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="row" style="padding-bottom:10px;">
+                        <div class="col-md-12">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label class="control-label" for="inputEmail3">类别:&nbsp;</label>
+                                    <select  id="sel_Category" class="form-control" style="width:90px;">
+                                        <option value="" />全部
+                                        <option value="正常" />正常
+                                        <option value="错误" />错误
+                                    </select>
+
+                                    <label class="control-label" for="inputEmail3">开始时间:&nbsp;</label><input  id="txt_stime" class="form-control Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss', startDate: '%y-%M-%d 00:00:00' });" >
+                                    <label class="control-label" for="inputEmail3">结束时间:&nbsp;</label><input  id="txt_etime" class="form-control Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss', startDate: '%y-%M-%d 00:00:00' });">
+                                    <label class="control-label" for="inputEmail3">关键字:&nbsp;</label><input  placeholder="输入关键字" id="txt_key" class="form-control">
+                                    <label class="control-label" for="inputEmail3">时间间隔:&nbsp;</label><input placeholder="0.00" id="txt_timespan" class="form-control" style="width:50px;">
+                                    &nbsp;<a id="btn_search" class="btn btn-blue" href="javascript:void(0);"><i class="fa fa-search"></i>&nbsp;查询</a>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                    <style>
+                        .dataTables_scroll {
+                            border:1px solid #ccc;
+                            /*border-right:1px solid #ccc;*/
+                            background-color:#F9F9F9;
+                            width:100%;
+                            padding:-1px;
+                        }
+                    </style>
+                    <div class="row" style="padding:0px 10px;">
+                        <table class="table table-bordered table-hover table-striped" style="width:1970px;max-width:1970px; word-wrap:break-word; word-break:break-all;" id="searchable">
+                            <thead class="">
+                                <tr role="row">
+                                    <th width="200px">记录时间</th>
+                                    <th width="80px">类别</th>
+                                    <th width="200px">控制器名称</th>
+                                    <th width="150px">方法名称</th>
+                                    <th width="250px">方法参数</th>
+                                    <th width="300px">内容</th>
+                                    <th width="80px">操作工号</th>
+                                    <th width="80px">操作姓名</th>
+                                    <th width="80px">IP</th>
+                                    <th width="200px">开始时间</th>
+                                    <th width="200px">结束时间</th>
+                                    <th width="150px">时间间隔</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        @*底部*@
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .selected {
+        background-color:#abc;
+    }
+    .selected:hover {
+        background-color:#abc;
+    }
+</style>
+
+<script>
+    $(function () {
+        BindGrid();
+
+        $("#btn_search").click(function(){
+            BindGrid();
+        });
+    });
+
+
+    function BindGrid(){
+
+        if ($.fn.dataTable.isDataTable('#searchable'))
+        {
+            $("#searchable").DataTable().ajax.reload();
+        }
+        else
+        {
+            $("#searchable").DataTable(
+           {
+               "scrollX": true,
+               "sScrollY": "400px",
+               "bFilter": false, //过滤功能
+               "language": {
+                   "sInfo": "从第 _START_ 条到第 _END_ 条，总 _TOTAL_ 条",
+                   "oPaginate": {
+                       "sPrevious": "前一页",
+                       "sNext": "下一页"
+                   }
+               },
+               "aaSorting": [
+                [ 0, "desc" ]
+               ],
+               ajax: function (data, callback, settings)
+               {
+                   //取得参数
+                   var input = new Object();
+                   input.Category = $("#sel_Category").val();
+                   input.Key = $("#txt_key").val();
+                   input.STime = $("#txt_stime").val();
+                   input.ETime = $("#txt_etime").val();
+                   input.TimeSpan = $("#txt_timespan").val();
+
+
+                   abp.services.app.log.queryLogRecords(input)
+                   .done(function (data)
+                   {
+                       //debugger;
+                       var resonse = $.dataTablesFromAbpOutput(input, data, settings);
+                       callback(resonse);
+
+                       abp.notify.success('created new person with id = ');
+                   });
+               },
+               "columns": [
+                       { "data": "createDate" },
+                       { "data": "category" },
+                       { "data": "controllerName" },
+                       { "data": "actionName" },
+                       { "data": "actionPara" },
+                       { "data": "contents" },
+                       { "data": "operatorCode" },
+                       { "data": "operatorName" },
+                       { "data": "ip" },
+                       { "data": "sTime" },
+                       { "data": "eTime" },
+                       { "data": "timeSpan" }
+               ]
+           });
+        }
+
+
+        //1.首先获取datatable对象(注意大小写`DataTable()`)：
+        var Dtable = $('#searchable').DataTable();
+        $('#searchable tbody').on('click', 'tr', function ()
+        {
+            if ($(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+            } else {
+                Dtable.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
+        })
+
+    }
+</script>
